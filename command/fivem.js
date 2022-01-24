@@ -1,3 +1,6 @@
-exports.run = (bot, msg, args) => {
-    msg.channel.createMessage("a");
+module.exports = {
+	name: "fivem",
+	async(bot, msg) {
+		msg.channel.createMessage("a");
+	},
 };

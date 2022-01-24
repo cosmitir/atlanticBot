@@ -1,6 +1,7 @@
-# Config files
+# Manual
 config.json
 .vscode/
+.eslintrc.json
 
 # Logs
 logs
