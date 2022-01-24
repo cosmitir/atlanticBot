@@ -5,6 +5,10 @@ const config = require("./config.json");
 const bot = new Eris(config.token);
 const fs = require("fs");
 
+bot.on("debug", (info) => {
+	console.log(info);
+});
+
 // Event handler
 const eventFiles = fs.readdirSync("./event").filter(file => file.endsWith(".js"));
 

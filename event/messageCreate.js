@@ -1,15 +1,8 @@
-const config = require("../config.json");
 const { domainWhitelist } = require("../domainWhitelist.js");
 
 module.exports = {
 	name: "messageCreate",
-	async execute(bot, command, msg) {
-		if (msg.author.bot) return;
-		if (msg.content.indexOf(config.prefix) !== 0) return;
-		const cmd = bot.commands.get(command);
-		if (!cmd) return;
-		cmd.run(bot, msg);
-
+	async execute(msg) {
 		if (domainWhitelist.some(domain => msg.content.includes(`http://${domain}/`) || msg.content.includes(`https://${domain}/`))) {
 			console.log(`Whitelisted || ${msg.author.id} | ${msg.author.username}#${msg.author.discriminator} || ${msg.content}`);
 		}
